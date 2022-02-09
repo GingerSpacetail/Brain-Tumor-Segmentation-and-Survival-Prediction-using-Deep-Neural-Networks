@@ -26,9 +26,9 @@ def compute_class_sens_spec(pred, label, class_num):
     # compute true positives, false positives, 
     # true negatives, false negatives
     tp = np.sum((class_pred == 1) & (class_label == 1))
-    tn = np.sum((class_pred == 0) & (class_label == 1))
+    tn = np.sum((class_pred == 0) & (class_label == 0))
     fp = np.sum((class_pred == 1) & (class_label == 0))
-    fn = np.sum((class_pred == 0) & (class_label == 0))
+    fn = np.sum((class_pred == 0) & (class_label == 1))
 
     # compute sensitivity and specificity
     sensitivity = tp / (tp + fn)
